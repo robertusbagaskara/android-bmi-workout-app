@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_tips_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/blank"
+            android:theme="@style/TitleStyle" />
+
+        <TextView
+            android:id="@+id/tv_tips_line1"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/SmallStyle"
+            android:text="@string/blank" />
+
+        <TextView
+            android:id="@+id/tv_tips_line2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/SmallStyle"
+            android:text="@string/blank" />
+
+        <TextView
+            android:id="@+id/tv_tips_line3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/SmallStyle"
+            android:text="@string/blank" />
+
+        <TextView
+            android:id="@+id/tv_tips_line4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/SmallStyle"
+            android:text="@string/blank" />
+
+        <TextView
+            android:id="@+id/tv_tips_line5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/SmallStyle"
+            android:text="@string/blank" />
+
+        <TextView
+            android:id="@+id/tv_tips_line6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/SmallStyle"
+            android:text="@string/blank" />
+
+        <TextView
+            android:id="@+id/tv_tips_line7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/SmallStyle"
+            android:text="@string/blank" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backtocalculator"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/DescriptionStyle"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:text="BACK TO CALCULATOR" />
+    </LinearLayout>
+</RelativeLayout>
