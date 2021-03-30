@@ -1,5 +1,21 @@
 <resources>
     <string name="app_name">TA_PAM</string>
+    <string name="blank"> </string>
+    <string name="defaultGreetings">Halo, User</string>
+    <string name="hintCount">Hitung BMI dan Kebutuhan Kalori Anda</string>
+    <string name="unitCm">cm</string>
+    <string name="unitKg">kg</string>
+    <string name="count">HITUNG</string>
+    <string name="hintResultCount">Hasil BMI dan Kebutuhan Kalori Anda</string>
+    <string name="separator">|</string>
+    <string name="bmiResult">BMI Index :</string>
+    <string name="hintNeed">Anda membutuhkan</string>
+    <string name="hintEveryday">kalori setiap harinya</string>
+    <string name="reset">ULANGI</string>
+    <string name="update">UPDATE</string>
+    <string name="workout"><![CDATA[WORKOUT >]]></string>
+    <string name="recipes"><![CDATA[RESEP MAKANAN SEHAT >]]></string>
+    <string name="tipsTrick"><![CDATA[Tips dan Trik >]]></string>
 
     <string-array name="list_gender">
         <item>Male</item>

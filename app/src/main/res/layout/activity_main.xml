@@ -36,7 +36,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="158dp"
         android:layout_marginRight="158dp"
-        android:text="Halo, User"
+        android:text="@string/defaultGreetings"
         android:textColor="#00334E"
         android:textSize="18sp" />
 
@@ -57,7 +57,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hitung BMI dan Kebutuhan Kalori Anda"
+                android:text="@string/hintCount"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
@@ -81,7 +81,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="cm" />
+                    android:text="@string/unitCm" />
                 <EditText
                     android:id="@+id/weightField"
                     android:layout_width="80dp"
@@ -96,7 +96,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="kg" />
+                    android:text="@string/unitKg" />
             </LinearLayout>
             <Button
                 android:id="@+id/btnHitung"
@@ -104,7 +104,7 @@
                 android:layout_height="37dp"
                 android:layout_below="@+id/layoutlinear"
                 android:layout_gravity="center"
-                android:text="HITUNG"
+                android:text="@string/count"
                 android:textSize="30px"
                 app:backgroundTint="#1F4C63" />
         </LinearLayout>
@@ -117,7 +117,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hasil BMI dan Kebutuhan Kalori Anda"
+                android:text="@string/hintResultCount"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
@@ -137,7 +137,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="      |      " />
+                    android:text="@string/separator" />
                 <TextView
                     android:id="@+id/weightHasil"
                     android:layout_width="wrap_content"
@@ -152,7 +152,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BMI Index   :   "
+                    android:text="@string/bmiResult"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/indexText"
@@ -185,7 +185,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Anda membutuhkan " />
+                    android:text="@string/hintNeed" />
                 <TextView
                     android:id="@+id/kaloriText"
                     android:layout_width="wrap_content"
@@ -195,7 +195,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" kalori setiap harinya" />
+                    android:text="@string/hintEveryday" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -207,14 +207,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="37dp"
                     android:layout_marginRight="40px"
-                    android:text="ULANGI"
+                    android:text="@string/reset"
                     android:textSize="30px"
                     app:backgroundTint="#1F4C63" />
                 <Button
                     android:id="@+id/btnUpdate"
                     android:layout_width="wrap_content"
                     android:layout_height="37dp"
-                    android:text="UPDATE"
+                    android:text="@string/update"
                     android:textSize="30px"
                     app:backgroundTint="#1F4C63" />
             </LinearLayout>
@@ -239,7 +239,7 @@
         android:layout_marginTop="33dp"
         android:layout_marginEnd="73dp"
         android:layout_marginRight="73dp"
-        android:text="WORKOUT                       >"
+        android:text="@string/workout"
         app:backgroundTint="#7397AA" />
 
     <Button
@@ -256,7 +256,7 @@
         android:layout_marginTop="33dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
-        android:text="RESEP MAKANAN SEHAT  >"
+        android:text="@string/recipes"
         app:backgroundTint="#7397AA" />
 
     <Button
@@ -273,7 +273,7 @@
         android:layout_marginTop="33dp"
         android:layout_marginEnd="71dp"
         android:layout_marginRight="71dp"
-        android:text="Tips dan Trik             >"
+        android:text="@string/tipsTrick"
         app:backgroundTint="#7397AA" />
 
     <ImageButton
