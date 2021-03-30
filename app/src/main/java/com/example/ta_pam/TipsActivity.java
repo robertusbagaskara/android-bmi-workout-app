@@ -32,21 +32,21 @@ public class TipsActivity extends AppCompatActivity {
         backtocalculator = findViewById(R.id.backtocalculator);
 
         if (kategori.equals("OVERWEIGHT")) {
-            tipsLine1 = "Jangan lupa minum air sebelum makan";
-            tipsLine2 = "Jangan lupa sarapan";
-            tipsLine3 = "Makanlah dalam porsi kecil";
-            tipsLine4 = "Makan secara perlahan";
-            tipsLine5 = "Tidak perlu menghindari makanan tertentu";
-            tipsLine6 = "Tidurlah yang cukup";
-            tipsLine7 = "Bergerak aktif";
+            tipsLine1 = "1. Olahraga seminggu 3 kali, setiap kali minimal 30 menit. Olahraga dapat membantu memperlancar metabolisme";
+            tipsLine2 = "2. Diet rendah lemak seperti goreng-gorengan, perbanyak makan makanan yang rebus atau dibakar.";
+            tipsLine3 = "3. Diet yang dianjurkan adalah diet rendah lemak, tinggi serat (banyak sayur dan buah), tinggi karbohidrat kompleks, dengan protein.";
+            tipsLine4 = "4. Batasi makan malam sampai jam 7 malam, apabila lebih dari jam tersebut, anda dapat mengonsumsi buah atau sayur";
+            tipsLine5 = "5. Perbanyak buah dan sayur, kurangi jenis karbohidrat simpleks seperti nasi putih, dan roti putih. Anda dapat mengonsumsi beras merah atau roti gandum sebagai pengganti karbohidrat simpleks";
+            tipsLine6 = "6. Jangan makan makanan instan seperti sosis, sarden, kornet, dll";
+            tipsLine7 = "7. Perbanyak minum air putih (minimal 8 gelas sehari)";
         } else if(kategori.equals("UNDERWEIGHT")){
-            tipsLine1 = "Mengkonsumsi makanan lebih sering";
-            tipsLine2 = "Memilih makanan dengan lebih cermat";
-            tipsLine3 = "Konsumsi makanan berlemak baik";
-            tipsLine4 = "Memperbanyak minum susu";
-            tipsLine5 = "Berolahraga secara rutin";
-            tipsLine6 = "Tidak merokok";
-            tipsLine7 = "Beristirahat yang cukup";
+            tipsLine1 = "1. Makan lebih sering, makan dengan porsi sedikit namun dengan frekuensi yang lebih banyak";
+            tipsLine2 = "2. Minum minuman yang berkalori, cobalah minum seperti susu, jus, atau smoothiest. Minuman ini akan memberikan asupan kalori sekaligus nutrisi.";
+            tipsLine3 = "3. Jauhi junk food. Junk food memang jadi salah satu makanan penyebab kegemukan. Tapi mengandung kalori ‘kosong’ dengan tambahan gula, garam dan lemak jahat yang buruk bagi kesehatan.";
+            tipsLine4 = "4. Konsumsi keju. Salah satu pilihan produk dairy yang enak, kaya kalori, vitamin dan nutrisi yang dibutuhkan tubuh adalah keju.";
+            tipsLine5 = "5. Konsumsi banyak protein. Beberapa studi membuktikan bahwa diet tinggi protein yang dilakukan bisa membantu mengubah ekstra kalori jadi otot, bukan lemak.";
+            tipsLine6 = "6. Olahraga, olahraga bisa membantu menambah bobot dengan otot yang terbentuk, juga bisa membuat lapar untuk menstimulasi selera makan.";
+            tipsLine7 = "7. Beristirahat yang cukup. Istirahat cukup diketahui berperan dalam mendukung proses pembentukan jaringan tubuh. Idealnya, orang dewasa butuh tidur selama 7 – 9 jam tiap hari.";
         }
 
         tvTipsHeader = findViewById(R.id.tv_tips_header);
