@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".profile_page">
+
 
     <ImageButton
         android:id="@+id/btnHome"
@@ -15,13 +16,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginEnd="209dp"
-        android:layout_marginRight="209dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
         android:background="#7397AA"
-        app:srcCompat="@drawable/home_24px_outlined" />
+        app:layout_constraintEnd_toStartOf="@+id/btnHistory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/home_24px_outlined"
+        tools:layout_editor_absoluteY="683dp" />
 
     <ImageButton
         android:id="@+id/btnHistory"
@@ -30,10 +31,14 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="9dp"
         android:background="#145374"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnHome"
+        app:layout_constraintTop_toBottomOf="@+id/btnCancel"
         app:srcCompat="@drawable/history_24px_outlined" />
 
     <ImageView
@@ -45,11 +50,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="46dp"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="312dp"
-        android:layout_marginRight="312dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user" />
 
     <TextView
@@ -59,11 +64,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginLeft="115dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginRight="180dp"
         android:text="Profil Anda"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/textView7"
@@ -74,12 +82,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="193dp"
-        android:layout_marginRight="193dp"
-        android:text="Nama Lengkap" />
+        android:layout_marginTop="24dp"
+        android:text="Nama Lengkap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
         android:id="@+id/nameField"
@@ -90,14 +98,20 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginRight="55dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:imeOptions="actionDone"
         android:inputType="textPersonName"
-        android:text="User" />
+        android:text="User"
+        app:layout_constraintBottom_toTopOf="@+id/bornLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/bornLabel"
@@ -108,12 +122,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="186dp"
-        android:layout_marginRight="186dp"
-        android:text="Tanggal Lahir" />
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="188dp"
+        android:layout_marginRight="188dp"
+        android:text="Tanggal Lahir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameField" />
 
     <EditText
         android:id="@+id/bornField"
@@ -126,14 +143,18 @@
         android:layout_alignParentRight="true"
         android:layout_marginStart="14dp"
         android:layout_marginLeft="14dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="53dp"
-        android:layout_marginRight="53dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="14dp"
         android:clickable="true"
         android:ems="10"
         android:focusable="false"
         android:inputType="textPersonName"
-        android:text="01-01-2000" />
+        android:text="01-01-2000"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bornLabel" />
 
     <TextView
         android:id="@+id/genderLabel"
@@ -144,13 +165,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="-1dp"
-        android:layout_marginEnd="181dp"
-        android:layout_marginRight="181dp"
-        android:text="Jenis Kelamin" />
-
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="179dp"
+        android:layout_marginRight="179dp"
+        android:text="Jenis Kelamin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightField" />
 
     <Spinner
         android:id="@+id/genderField"
@@ -161,12 +184,17 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginEnd="238dp"
-        android:layout_marginRight="238dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginEnd="231dp"
+        android:layout_marginRight="231dp"
+        android:layout_marginBottom="34dp"
+        android:ems="10"
         android:entries="@array/list_gender"
-        android:ems="10" />
+        app:layout_constraintBottom_toTopOf="@+id/btnUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genderLabel" />
 
     <TextView
         android:id="@+id/textView9"
@@ -177,12 +205,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginRight="160dp"
-        android:text="Waktu Pengingat" />
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginRight="163dp"
+        android:text="Waktu Pengingat"
+        app:layout_constraintBottom_toTopOf="@+id/reminderField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/reminderField"
@@ -193,15 +223,19 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginEnd="238dp"
-        android:layout_marginRight="238dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginRight="185dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
         android:ems="10"
         android:focusable="false"
-        android:clickable="true"
         android:inputType="textPersonName"
-        android:text="15:00" />
+        android:text="15:00"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView10"
@@ -212,12 +246,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="177dp"
-        android:layout_marginRight="177dp"
-        android:text="Berat Badan Anda" />
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginRight="180dp"
+        android:text="Berat Badan Anda"
+        app:layout_constraintBottom_toTopOf="@+id/weightField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/weightField"
@@ -226,13 +262,15 @@
         android:layout_below="@+id/textView10"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         android:ems="10"
-        android:inputType="number"
         android:imeOptions="actionDone"
-        android:text="64" />
-
+        android:inputType="number"
+        android:text="64"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
         android:id="@+id/textView"
@@ -243,14 +281,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="91dp"
-        android:layout_marginLeft="91dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="269dp"
-        android:layout_marginRight="269dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="281dp"
+        android:layout_marginRight="281dp"
+        android:layout_marginBottom="30dp"
         android:ems="10"
-        android:text="kg" />
-
+        android:text="kg"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/weightField"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
         android:id="@+id/textView11"
@@ -261,12 +301,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="161dp"
-        android:layout_marginRight="161dp"
-        android:text="Tinggi Badan Anda" />
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginRight="159dp"
+        android:text="Tinggi Badan Anda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightField" />
 
     <EditText
         android:id="@+id/heightField"
@@ -275,12 +318,17 @@
         android:layout_below="@+id/textView11"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:imeOptions="actionDone"
         android:inputType="number"
-        android:text="175" />
+        android:text="175"
+        app:layout_constraintBottom_toTopOf="@+id/genderLabel"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
         android:id="@+id/textView2"
@@ -291,34 +339,49 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="91dp"
-        android:layout_marginLeft="91dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="269dp"
-        android:layout_marginRight="269dp"
-        android:text="cm" />
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="277dp"
+        android:layout_marginRight="277dp"
+        android:layout_marginBottom="29dp"
+        android:text="cm"
+        app:layout_constraintBottom_toTopOf="@+id/genderLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/heightField"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="17dp"
-        android:layout_below="@+id/textView2">
-        <Button
-            android:id="@+id/btnCancel"
-            android:layout_width="wrap_content"
-            android:layout_height="37dp"
-            android:layout_marginRight="40px"
-            android:text="CANCEL"
-            android:textSize="40px"
-            app:backgroundTint="#1F4C63" />
-        <Button
-            android:id="@+id/btnUpdate"
-            android:layout_width="wrap_content"
-            android:layout_height="37dp"
-            android:text="UPDATE"
-            android:textSize="40px"
-            app:backgroundTint="#1F4C63" />
-    </LinearLayout>
-</RelativeLayout>
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginLeft="83dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="9dp"
+        android:text="UPDATE"
+        android:textSize="40px"
+        app:backgroundTint="#1F4C63"
+        app:layout_constraintBottom_toTopOf="@+id/btnHome"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genderField" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="83dp"
+        android:layout_marginRight="83dp"
+        android:layout_marginBottom="9dp"
+        android:text="CANCEL"
+        android:textSize="40px"
+        app:backgroundTint="#1F4C63"
+        app:layout_constraintBottom_toTopOf="@+id/btnHistory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnUpdate"
+        app:layout_constraintTop_toBottomOf="@+id/genderLabel" />
+</androidx.constraintlayout.widget.ConstraintLayout>
