@@ -91,6 +91,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnResep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, activity_resep.class);
+                startActivity(i);
+            }
+        });
+
         btnHitung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
