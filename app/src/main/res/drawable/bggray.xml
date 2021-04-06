@@ -10,5 +10,5 @@
         />
     <size android:height="40dp"
         android:width="40dp"/>
-    <stroke android:width="30px" android:color="#FFFFFF" />
+    <stroke android:width="5dp" android:color="#FFFFFF" />
 </shape>

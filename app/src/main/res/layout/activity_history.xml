@@ -6,41 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".activity_history">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="207dp"
-        android:layout_height="48dp"
-
+    <ImageButton
+        android:id="@+id/btnHistory"
+        android:layout_width="205dp"
+        android:layout_height="62dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:background="#7397AA"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/home_24px_outlined" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnHome"
+        app:layout_constraintTop_toBottomOf="@+id/btnResep"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/history_24px_outlined" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="203dp"
-        android:layout_height="48dp"
-
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:layout_width="206dp"
+        android:layout_height="62dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:background="#145374"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:srcCompat="@drawable/history_24px_outlined" />
+        app:layout_constraintEnd_toStartOf="@+id/btnHistory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnResep"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/home_24px_outlined" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="289dp"
-        android:layout_marginRight="289dp"
+        android:layout_marginTop="40dp"
         android:text="History"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

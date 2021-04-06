@@ -67,6 +67,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnWorkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, workout_menu.class);
+                startActivity(i);
+            }
+        });
+
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, activity_history.class);
+                startActivity(i);
+            }
+        });
+
         btnHitung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

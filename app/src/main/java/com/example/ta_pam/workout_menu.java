@@ -11,4 +11,6 @@ public class workout_menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_menu);
     }
+
+
 }
