@@ -83,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnTips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, TipsActivity.class);
+                startActivity(i);
+            }
+        });
+
         btnHitung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
