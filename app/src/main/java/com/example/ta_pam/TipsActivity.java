@@ -29,7 +29,6 @@ public class TipsActivity extends AppCompatActivity {
 
         String kategori = getIntent().getStringExtra("kategori");
 
-        backtocalculator = findViewById(R.id.backtocalculator);
 
         if (kategori.equals("OVERWEIGHT")) {
             tipsLine1 = "1. Olahraga seminggu 3 kali, setiap kali minimal 30 menit. Olahraga dapat membantu memperlancar metabolisme";
