@@ -49,6 +49,14 @@ public class TipsActivity extends AppCompatActivity {
             tipsLine5 = "5. Konsumsi banyak protein. Beberapa studi membuktikan bahwa diet tinggi protein yang dilakukan bisa membantu mengubah ekstra kalori jadi otot, bukan lemak.";
             tipsLine6 = "6. Olahraga, olahraga bisa membantu menambah bobot dengan otot yang terbentuk, juga bisa membuat lapar untuk menstimulasi selera makan.";
             tipsLine7 = "7. Beristirahat yang cukup. Istirahat cukup diketahui berperan dalam mendukung proses pembentukan jaringan tubuh. Idealnya, orang dewasa butuh tidur selama 7 – 9 jam tiap hari.";
+        } else if(kategori.equals("IDEAL")){
+            tipsLine1 = "1. Jangan Lupakan Sarapan.";
+            tipsLine2 = "2. Banyak Berolahraga.";
+            tipsLine3 = "3. Pola Makan Sehat.";
+            tipsLine4 = "4. Perbanyak Minum Air.";
+            tipsLine5 = "5. Makan Tepat Waktu.";
+            tipsLine6 = "6. Melakukan Rancangan mengenai makanan tiap hari.";
+            tipsLine7 = "7. Beristirahat yang cukup.";
         }
 
         tvTipsHeader = findViewById(R.id.tv_tips_header);

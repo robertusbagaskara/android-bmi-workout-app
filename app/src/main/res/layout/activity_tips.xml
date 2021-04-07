@@ -80,12 +80,12 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/backtocalculator"
-            android:layout_marginTop="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/DescriptionStyle"
+            android:layout_marginTop="25dp"
             android:background="@color/white"
             android:padding="5dp"
-            android:text="BACK TO CALCULATOR" />
+            android:text="BACK TO MAIN MENU"
+            android:theme="@style/DescriptionStyle" />
     </LinearLayout>
 </RelativeLayout>
