@@ -18,6 +18,7 @@ public class TipsActivity extends AppCompatActivity {
     private View background;
     public String tema;
 
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class TipsActivity extends AppCompatActivity {
                 tipsLine3 = "0", tipsLine4 = "0", tipsLine5 = "0", tipsLine6 = "0", tipsLine7 = "0";
 
         String kategori = getIntent().getStringExtra("kategori");
+        backtocalculator = findViewById(R.id.backtocalculator);
+        background = findViewById(R.id.background);
 
 
         if (kategori.equals("OVERWEIGHT")) {

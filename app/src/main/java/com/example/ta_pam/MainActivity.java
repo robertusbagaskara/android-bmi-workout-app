@@ -19,7 +19,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-
+    public String throwKategori;
     private LinearLayout layoutHitung, layoutHasil;
     private ImageView btnProfile;
     private ImageButton btnHome, btnHistory;
@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, TipsActivity.class);
+                i.putExtra("kategori", throwKategori);
                 startActivity(i);
             }
         });
@@ -124,6 +125,8 @@ public class MainActivity extends AppCompatActivity {
                     indexText.setText(String.format("%.2f", BMIIndex));
                     kategoriText.setText(kategori);
                     kaloriText.setText(String.format("%.2f", getKalori(inputBerat,inputTinggi)));
+
+                    throwKategori = kategori;
                 }
             }
         });
