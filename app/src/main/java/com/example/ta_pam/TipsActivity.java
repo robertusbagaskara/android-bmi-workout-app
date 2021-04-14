@@ -1,7 +1,9 @@
 package com.example.ta_pam;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +19,7 @@ public class TipsActivity extends AppCompatActivity {
     private TextView tvTipsHeader, tvLine1, tvLine2, tvLine3, tvLine4, tvLine5, tvLine6, tvLine7, backtocalculator;
     private View background;
     public String tema;
-
+    SharedPreferences sharedPreferences;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -28,9 +30,14 @@ public class TipsActivity extends AppCompatActivity {
         String tipsLine1 = "0", tipsLine2 = "0",
                 tipsLine3 = "0", tipsLine4 = "0", tipsLine5 = "0", tipsLine6 = "0", tipsLine7 = "0";
 
-        String kategori = getIntent().getStringExtra("kategori");
         backtocalculator = findViewById(R.id.backtocalculator);
         background = findViewById(R.id.background);
+        sharedPreferences = getSharedPreferences("Setting", Context.MODE_PRIVATE);
+
+        String weightOld = sharedPreferences.getString("weightField", "0");
+        String heightOld = sharedPreferences.getString("heightField", "0");
+
+        String kategori = userService.getKategori(userService.getBMIIndex(weightOld,heightOld));
 
 
         if (kategori.equals("OVERWEIGHT")) {
