@@ -1,19 +1,293 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="RESEP"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/tumis_ayam_brokoli_crop" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="#4D000000"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:text="550 kcal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/white" />
+        </FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:text="Tumis Ayam Brokoli"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Main Course"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menu simpel dengan asupan kalori dan vitamin yang cukup. Mudah untuk dibuat dengan bahan yang juga mudah untuk dicari, dan tentu cocok disantap kapan saja."
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:lineSpacingMultiplier="1"
+            android:textColor="@android:color/black"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="24dp" >
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginRight="18dp"
+                    android:text="Bahan - Bahan" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:text="- 250gr Brokoli(100kcal) \n - 1 buah Jagung(85 kcal) \n - 1 Telur Ayam(80 kcal) \n - 200 gram ayam(300 kcal)"
+                    android:textColor="@color/black" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginRight="18dp"
+                    android:text="Cara Membuat" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:text="1. Rebus semua bahan \n2. Tumis ayam dan dada ayam \n3. Campur hasil rebusan dengan tumis ayam"
+                    android:textColor="@color/black" />
+            </TableRow>
+        </TableLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/avocado_toast_crop" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="#4D000000"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:text="500 kcal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/white" />
+        </FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:text="Avocado Toast"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Main Course"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toast alpukat, menarik untuk dicoba. Toast denga rasa manis yang tidak terlalu kuat dan tentu ramah gula darah"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:lineSpacingMultiplier="1"
+            android:textColor="@android:color/black"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="24dp" >
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginRight="18dp"
+                    android:text="Bahan - Bahan" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:text="- 100gr Buah Alpukat, potong tipis - tipis(150 kcal) \n - 2 lembar roti tawar gandum(200 kcal) \n - 2 buah telur(150 kcal) \n - •	Biji-bijian seperti Biji Falxseed, Biji Wijen dan Biji Bunga Matahari (Opsional)"
+                    android:textColor="@color/black" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginRight="18dp"
+                    android:text="Cara Membuat" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:text="1. Toast roti atau panggang dengan teflon. \n2. Jika roti sudah agak mengeras dan berwarna kecoklatan. Angkat roti. Lalu sisihkan. \n3. Ceplok telur setengah matang. Sisihkan. \n4. Taruh alpukat di atas roti, lalu tambahkan telur di atasnya. Taburkan biji-bijian. Sajikan."
+                    android:textColor="@color/black" />
+            </TableRow>
+        </TableLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/dragon_fruits_oats_crop" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="#4D000000"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:text="500 kcal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/white" />
+        </FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:text="Dragon Fruits Oats"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Dessert"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Minum dan makanan bergizi. Kombinasi yang menarik menggabungkan minuman yang segar dan sarapan dengan oats."
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:lineSpacingMultiplier="1"
+            android:textColor="@android:color/black"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="24dp" >
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginRight="18dp"
+                    android:text="Bahan - Bahan" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:text=" - 20 ml Susu UHT (50 kcal) \n - 1 sdm madu (50 kcal) \n - ½ bagian buah naga (120 kcal) \n - 5 sdm oats (150 kcal) \n - 2 sdm cornflake (100 kcal)"
+                    android:textColor="@color/black" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginRight="18dp"
+                    android:text="Cara Membuat" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:text="1. Masukan susu UHT ke dalam mangkuk, tambahkan 1 SDM madu kemudian di aduk \n2. Kupas buah naga lalu iris, masukan ke dalam mangkuk, tambahkan 5 SDM oats Dan 2 sdm cornflake"
+                    android:textColor="@color/black" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+</ScrollView>
