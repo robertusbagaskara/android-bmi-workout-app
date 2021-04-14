@@ -16,8 +16,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnHome"
-        app:layout_constraintTop_toBottomOf="@+id/button10"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/history_24px_outlined" />
 
     <ImageButton
@@ -26,12 +24,10 @@
         android:layout_height="62dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="#145374"
+        android:background="#7397AA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnHistory"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button10"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/home_24px_outlined" />
 
     <TextView
@@ -44,11 +40,11 @@
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.017"
-        app:layout_constraintStart_toEndOf="@+id/workout_type"
+        app:layout_constraintStart_toEndOf="@+id/jumlahWorkout"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/workout_time"
+        android:id="@+id/waktuWorkout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -62,14 +58,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/workout_type"
+        android:id="@+id/jumlahWorkout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="56dp"
-        android:text="16"
+        android:text="5"
         android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintStart_toEndOf="@+id/textView12"
@@ -86,24 +82,24 @@
         android:text="mins  -"
         android:textColor="@color/black"
         android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/workout_time"
+        app:layout_constraintStart_toEndOf="@+id/waktuWorkout"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/workoutFourImage"
         android:layout_width="72dp"
         android:layout_height="69dp"
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
         android:layout_marginTop="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintBottom_toTopOf="@+id/workoutFourLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/workoutThreeLine"
         app:layout_constraintVertical_bias="0.29000002"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/workoutTwoTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -112,11 +108,26 @@
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.077"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+        app:layout_constraintStart_toEndOf="@+id/workoutTwoImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutOneLine" />
+
+    <TextView
+        android:id="@+id/workoutTwoKalori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="320 kalori"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/workoutTwoLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintStart_toEndOf="@+id/workoutTwoImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutOneLine"
+        app:layout_constraintVertical_bias="0.25" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/workoutFourLine"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -130,40 +141,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        app:layout_constraintTop_toBottomOf="@+id/workoutFourTime" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/workoutThreeTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" 00 : 20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintStart_toEndOf="@+id/workoutThreeImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutThreeTitle" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/workoutFiveTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" 00 : 20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+        app:layout_constraintStart_toEndOf="@+id/workoutFiveImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutFiveTitle" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/workoutOneTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" 00 : 20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintStart_toEndOf="@+id/workoutOneImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutOneTitle" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/workoutThreeLine"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -177,35 +188,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        app:layout_constraintTop_toBottomOf="@+id/workoutThreeTime" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/workoutTwoImage"
         android:layout_width="72dp"
         android:layout_height="69dp"
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        app:layout_constraintBottom_toTopOf="@+id/workoutTwoLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintTop_toBottomOf="@+id/workoutOneLine"
         app:layout_constraintVertical_bias="0.444"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="204dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="#1F4C63"
-        android:text="START"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
-
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/workoutFourTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -213,11 +212,11 @@
         android:text=" 00 : 20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+        app:layout_constraintStart_toEndOf="@+id/workoutFourImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutFourTitle" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/workoutFourTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -228,11 +227,27 @@
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+        app:layout_constraintStart_toEndOf="@+id/workoutFourImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutThreeLine" />
+
+    <TextView
+        android:id="@+id/workoutFourKalori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="68dp"
+        android:text="320 kalori"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/workoutFourLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintStart_toEndOf="@+id/workoutFourImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutThreeLine" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/workoutFiveLine"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -243,11 +258,12 @@
         android:paddingBottom="0.5dp"
         android:scaleType="fitXY"
         android:src="@android:drawable/divider_horizontal_dark"
-        app:layout_constraintTop_toBottomOf="@+id/textView20"
-        tools:layout_editor_absoluteX="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workoutFiveTime" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/workoutTwoLine"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -261,20 +277,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/workoutTwoTime" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/workoutTwoTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" 00 : 20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintStart_toEndOf="@+id/workoutTwoImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutTwoTitle" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/workoutFiveTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
@@ -283,11 +299,38 @@
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.077"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+        app:layout_constraintStart_toEndOf="@+id/workoutFiveImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutFourLine" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/workoutFiveKalori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="320 kalori"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@+id/workoutFiveImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutFourLine" />
+
+    <TextView
+        android:id="@+id/totalKalori"
+        android:layout_width="320dp"
+        android:layout_height="19dp"
+        android:text="Total calories burned = 1230 calories"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/workoutFiveLine"
+        app:layout_constraintVertical_bias="0.163" />
+
+    <TextView
+        android:id="@+id/workoutOneTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -298,36 +341,51 @@
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/workoutOneImage"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
+    <TextView
+        android:id="@+id/workoutOneKalori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="320 kalori"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/workoutOneLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toEndOf="@+id/workoutOneTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:layout_constraintVertical_bias="0.513" />
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/workoutOneImage"
         android:layout_width="72dp"
         android:layout_height="69dp"
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView13"
+        app:layout_constraintBottom_toTopOf="@+id/workoutOneLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/workoutThreeImage"
         android:layout_width="72dp"
         android:layout_height="69dp"
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
         android:layout_marginTop="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintBottom_toTopOf="@+id/workoutThreeLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/workoutTwoLine"
         app:layout_constraintVertical_bias="0.31"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/workoutOneLine"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
 
@@ -342,10 +400,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/workoutOneTime" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/workoutThreeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
@@ -356,19 +414,36 @@
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+        app:layout_constraintStart_toEndOf="@+id/workoutThreeImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutTwoLine" />
+
+    <TextView
+        android:id="@+id/workoutThreeKalori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="80dp"
+        android:text="320 kalori"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/workoutThreeLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintStart_toEndOf="@+id/workoutThreeImage"
+        app:layout_constraintTop_toBottomOf="@+id/workoutTwoLine"
+        app:layout_constraintVertical_bias="0.076" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/workoutFiveImage"
         android:layout_width="72dp"
         android:layout_height="69dp"
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        app:layout_constraintBottom_toTopOf="@+id/workoutFiveLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11"
+        app:layout_constraintTop_toBottomOf="@+id/workoutFourLine"
         app:layout_constraintVertical_bias="0.55"
         tools:srcCompat="@tools:sample/avatars" />
 

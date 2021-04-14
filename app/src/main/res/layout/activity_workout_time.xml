@@ -11,7 +11,7 @@
         android:layout_width="304dp"
         android:layout_height="50dp"
         android:layout_marginTop="80dp"
-        android:text="FULL BODY WORKOUT"
+        android:text="CHOOSE YOUR TIME"
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,20 +20,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/introText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Choose Your Time"
+        android:layout_marginTop="32dp"
+        android:text="We will match the workout for people with OVERWEIGHT"
         android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/minutes25"
         android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_marginStart="24dp"
@@ -44,11 +44,11 @@
         android:backgroundTint="#1F4C63"
         android:text="25 Minutes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintStart_toEndOf="@+id/minutes20"
+        app:layout_constraintTop_toBottomOf="@+id/minutes15" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/minutes20"
         android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_marginStart="30dp"
@@ -56,12 +56,12 @@
         android:layout_marginTop="40dp"
         android:backgroundTint="#1F4C63"
         android:text="20 Minutes"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/minutes25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/minutes5" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/minutes15"
         android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_marginStart="24dp"
@@ -72,11 +72,11 @@
         android:backgroundTint="#1F4C63"
         android:text="15 Minutes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toEndOf="@+id/minutes5"
+        app:layout_constraintTop_toBottomOf="@+id/introText" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/minutes5"
         android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_marginStart="30dp"
@@ -84,12 +84,12 @@
         android:layout_marginTop="40dp"
         android:backgroundTint="#1F4C63"
         android:text="5 Minutes"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/minutes15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/introText" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/minutes45"
         android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_marginStart="24dp"
@@ -101,11 +101,11 @@
         android:text="45 Minutes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toEndOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintStart_toEndOf="@+id/minutes30"
+        app:layout_constraintTop_toBottomOf="@+id/minutes25" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/minutes30"
         android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_marginStart="30dp"
@@ -113,9 +113,9 @@
         android:layout_marginTop="40dp"
         android:backgroundTint="#1F4C63"
         android:text="30 Minutes"
-        app:layout_constraintEnd_toStartOf="@+id/button9"
+        app:layout_constraintEnd_toStartOf="@+id/minutes45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/minutes20" />
 
     <ImageButton
         android:id="@+id/btnHistory"
@@ -135,7 +135,7 @@
         android:layout_height="62dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="#145374"
+        android:background="#7397AA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnHistory"
         app:layout_constraintStart_toStartOf="parent"

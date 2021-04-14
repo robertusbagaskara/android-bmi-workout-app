@@ -1,5 +1,6 @@
 package com.example.ta_pam;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -7,7 +8,10 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
@@ -21,6 +25,8 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -35,6 +41,8 @@ public class profile_page extends AppCompatActivity {
     private ImageButton btnHome, btnHistory;
     SharedPreferences sharedPreferences;
 
+    DataHelper dbHelper;
+    protected Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +57,7 @@ public class profile_page extends AppCompatActivity {
         heightField = findViewById(R.id.heightField);
         btnCancel = findViewById(R.id.btnCancel);
         btnUpdate = findViewById(R.id.btnUpdate);
-        btnHistory = findViewById(R.id.btnHistory);
-        btnHome = findViewById(R.id.btnHome);
-
+        dbHelper = new DataHelper(this);
         sharedPreferences = getSharedPreferences("Setting", Context.MODE_PRIVATE);
         loadContent();
 
@@ -73,16 +79,28 @@ public class profile_page extends AppCompatActivity {
 
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
+                String weightOld = sharedPreferences.getString("weightField", "0");
+                String heightOld = sharedPreferences.getString("heightField", "0");
+
+                String weightNew = weightField.getText().toString();
+                String heightNew = heightField.getText().toString();
+
                 editor.putString("nameField",nameField.getText().toString());
                 editor.putString("genderField",genderField.getSelectedItem().toString());
                 editor.putString("bornField",bornField.getText().toString());
                 editor.putString("reminderField",reminderField.getText().toString());
-                editor.putString("weightField",weightField.getText().toString());
-                editor.putString("heightField",heightField.getText().toString());
+                editor.putString("weightField",weightNew);
+                editor.putString("heightField",heightNew);
                 editor.apply();
+
+                if (!(weightNew.equalsIgnoreCase(weightOld) && heightOld.equalsIgnoreCase(heightNew))){
+                    saveToDB(weightNew,heightNew);
+                }
+
                 Toast.makeText(getBaseContext(),"Profil berhasil diupdate",Toast.LENGTH_LONG).show();
                 Intent i = new Intent(profile_page.this, MainActivity.class);
                 startActivity(i);
@@ -96,6 +114,8 @@ public class profile_page extends AppCompatActivity {
             }
         });
 
+        btnHistory = findViewById(R.id.btnHistory);
+        btnHome = findViewById(R.id.btnHome);
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,13 +124,13 @@ public class profile_page extends AppCompatActivity {
             }
         });
 
-//        btnHistory.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(profile_page.this, history_page.class);
-//                startActivity(i);
-//            }
-//        });
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(profile_page.this, activity_history.class);
+                startActivity(i);
+            }
+        });
 
     }
 
@@ -160,6 +180,54 @@ public class profile_page extends AppCompatActivity {
         }, Integer.valueOf(timearray[0]), Integer.valueOf(timearray[1]), DateFormat.is24HourFormat(this));
 
         timePickerDialog.show();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void saveToDB(String weight, String height){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        String kalori = String.format("%.2f", getKalori(weight,height));
+        String dateInString = new String(ZonedDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));
+        db.execSQL("insert into history(tinggi, berat, kalori, tanggal) values ('" +
+                height + "', '" +
+                weight + "', '" +
+                kalori + "', '" +
+                dateInString + "');");
+    }
+
+    private Float getKalori(String inputBerat, String inputTinggi){
+//        BMR Pria = 66,5 + (13,7 × berat badan) + (5 × tinggi badan) – (6,8 × usia)
+//        BMR Wanita = 655 + (9,6 × berat badan) + (1,8 × tinggi badan) – (4,7 × usia)
+//      kalori = bmr * 1.3
+
+        float kalori = 0;
+        String gender = sharedPreferences.getString("genderField", "Male");
+        if (gender.equalsIgnoreCase("Male")) {
+            kalori = (float) ((66.5 + (13.7 * Float.valueOf(inputBerat)) + (5 * Float.valueOf(inputTinggi)) - ( 6.8 * getAge()))*1.3);
+        }else {
+            kalori = (float) ((655 + (9.6 * Float.valueOf(inputBerat)) + (1.8 * Float.valueOf(inputTinggi)) - ( 4.7 * getAge()))*1.3);
+        }
+
+        return kalori;
+    }
+
+    private Float getAge(){
+        Calendar newCalendar = Calendar.getInstance();
+        String dateOfBirth = sharedPreferences.getString("bornField", "01-01-2000");
+        System.out.println("DATEEE " + dateOfBirth);
+        int currentYear = newCalendar.get(Calendar.YEAR);
+        int currentMonth = newCalendar.get(Calendar.MONTH) + 1;
+        int currentDay = newCalendar.get(Calendar.DAY_OF_MONTH);
+
+        String[] dateOfBirthArray = dateOfBirth.split("-");
+        int day = Integer.valueOf(dateOfBirthArray[0]);
+        int month = Integer.valueOf(dateOfBirthArray[1]);
+        int year = Integer.valueOf(dateOfBirthArray[2]);
+
+        int age = currentYear - year - 1;
+        if ((currentMonth> month) || (currentMonth==month && currentDay>=day)){
+            age +=1 ;
+        }
+        return Float.valueOf(age);
     }
 
 }

@@ -1,10 +1,14 @@
 package com.example.ta_pam;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,6 +22,9 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+import java.time.format.DateTimeFormatter;
+import java.time.ZonedDateTime;
+
 public class MainActivity extends AppCompatActivity {
     public String throwKategori;
     private LinearLayout layoutHitung, layoutHasil;
@@ -27,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView heloText, heightHasilText, weightHasilText, indexText, kategoriText, kaloriText;
     private Button btnHitung, btnUlangi, btnUpdate, btnWorkout, btnResep, btnTips;
     SharedPreferences sharedPreferences;
+
+    DataHelper dbHelper;
+    protected Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         weightField.setText(sharedPreferences.getString("weightField", "0"));
         heightField.setText(sharedPreferences.getString("heightField", "0"));
 
+        dbHelper = new DataHelper(this);
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         btnWorkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, workout_menu.class);
+                Intent i = new Intent(MainActivity.this, activity_workout_time.class);
                 startActivity(i);
             }
         });
@@ -120,11 +131,11 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("BMIINDEX " + BMIIndex);
                     layoutHitung.setVisibility(View.GONE);
                     layoutHasil.setVisibility(View.VISIBLE);
-                    weightHasilText.setText(inputBerat+" kg");
-                    heightHasilText.setText(inputTinggi+" cm");
-                    indexText.setText(String.format("%.2f", BMIIndex));
+                    weightHasilText.setText("  "+inputBerat+" kg");
+                    heightHasilText.setText(inputTinggi+" cm  ");
+                    indexText.setText(" "+String.format("%.2f", BMIIndex));
                     kategoriText.setText(kategori);
-                    kaloriText.setText(String.format("%.2f", getKalori(inputBerat,inputTinggi)));
+                    kaloriText.setText(" "+ String.format("%.2f", getKalori(inputBerat,inputTinggi))+ " ");
 
                     throwKategori = kategori;
                 }
@@ -140,12 +151,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("weightField",weightField.getText().toString());
-                editor.putString("heightField",heightField.getText().toString());
+                String weight = weightField.getText().toString();
+                String height = heightField.getText().toString();
+                editor.putString("weightField",weight);
+                editor.putString("heightField",height);
                 editor.apply();
+                saveToDB(weight,height);
+
                 Toast.makeText(getBaseContext(),"Berat Badan dan Tinggi Badan berhasil diupdate",Toast.LENGTH_LONG).show();
                 layoutHasil.setVisibility(View.GONE);
                 layoutHitung.setVisibility(View.VISIBLE);
@@ -209,5 +225,17 @@ public class MainActivity extends AppCompatActivity {
         return Float.valueOf(age);
     }
 
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void saveToDB(String weight, String height){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        String kalori = String.format("%.2f", getKalori(weight,height));
+        String dateInString = new String(ZonedDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));
+        db.execSQL("insert into history(tinggi, berat, kalori, tanggal) values ('" +
+                height + "', '" +
+                weight + "', '" +
+                kalori + "', '" +
+                dateInString + "');");
+    }
 
 }
