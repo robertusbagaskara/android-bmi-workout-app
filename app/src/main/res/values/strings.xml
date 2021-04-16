@@ -16,6 +16,7 @@
     <string name="workout"><![CDATA[WORKOUT >]]></string>
     <string name="recipes"><![CDATA[RESEP MAKANAN SEHAT >]]></string>
     <string name="tipsTrick"><![CDATA[Tips dan Trik >]]></string>
+    <string name="back_to_main_menu">BACK TO MAIN MENU</string>
 
     <string-array name="list_gender">
         <item>Male</item>

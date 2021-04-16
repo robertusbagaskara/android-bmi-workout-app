@@ -37,13 +37,14 @@
 
     <LinearLayout
         android:id="@id/layoutlinear"
-        android:layout_width="362dp"
-        android:layout_height="210dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="361dp"
+        android:layout_height="224dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bggray"
         android:orientation="vertical"
         android:padding="70px"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnProfile">
 
@@ -109,7 +110,7 @@
             <Button
                 android:id="@+id/btnHitung"
                 android:layout_width="wrap_content"
-                android:layout_height="37dp"
+                android:layout_height="36dp"
                 android:layout_below="@+id/layoutlinear"
                 android:layout_gravity="center"
                 android:text="@string/count"
@@ -246,18 +247,18 @@
                     android:layout_marginEnd="40dp"
                     android:layout_marginRight="40dp"
                     android:text="@string/reset"
+                    android:textColor="@color/white"
                     android:textSize="12sp"
-                    app:backgroundTint="#1F4C63"
-                    android:textColor="@color/white"/>
+                    app:backgroundTint="#1F4C63" />
 
                 <Button
                     android:id="@+id/btnUpdate"
                     android:layout_width="wrap_content"
                     android:layout_height="37dp"
                     android:text="@string/update"
+                    android:textColor="@color/white"
                     android:textSize="12sp"
-                    app:backgroundTint="#1F4C63"
-                    android:textColor="@color/white"/>
+                    app:backgroundTint="#1F4C63" />
             </LinearLayout>
 
         </LinearLayout>
@@ -282,10 +283,12 @@
         android:layout_marginTop="28dp"
         android:text="@string/recipes"
         app:backgroundTint="#7397AA"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTips" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTips"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnTips"
