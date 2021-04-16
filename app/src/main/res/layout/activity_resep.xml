@@ -324,5 +324,35 @@
             </TableRow>
         </TableLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageButton
+                android:id="@+id/btnHistory"
+                android:layout_width="205dp"
+                android:layout_height="62dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="#145374"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnHome"
+                app:srcCompat="@drawable/history_24px_outlined" />
+            <ImageButton
+                android:id="@+id/btnHome"
+                android:layout_width="206dp"
+                android:layout_height="62dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="#7397AA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnHistory"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/home_24px_outlined" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </ScrollView>
