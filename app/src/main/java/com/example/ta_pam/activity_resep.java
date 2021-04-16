@@ -17,6 +17,9 @@ public class activity_resep extends AppCompatActivity {
         btnHistory = findViewById(R.id.btnHistory);
         btnHome = findViewById(R.id.btnHome);
 
+        btnHistory.bringToFront();
+        btnHome.bringToFront();
+
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

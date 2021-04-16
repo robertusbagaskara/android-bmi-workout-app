@@ -81,8 +81,13 @@ public class MainActivity extends AppCompatActivity {
         btnWorkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, activity_workout_time.class);
-                startActivity(i);
+                if (!isUserUpdatedProfile()){
+                    Toast.makeText(getBaseContext(),"Mohon update profile anda terlebih dahulu",Toast.LENGTH_LONG).show();
+                } else{
+                    Intent i = new Intent(MainActivity.this, activity_workout_time.class);
+                    startActivity(i);
+                }
+
             }
         });
 
@@ -97,16 +102,25 @@ public class MainActivity extends AppCompatActivity {
         btnTips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, TipsActivity.class);
-                startActivity(i);
+                if (!isUserUpdatedProfile()){
+                    Toast.makeText(getBaseContext(),"Mohon update profile anda terlebih dahulu",Toast.LENGTH_LONG).show();
+                } else{
+                    Intent i = new Intent(MainActivity.this, TipsActivity.class);
+                    startActivity(i);
+                }
+
             }
         });
 
         btnResep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, activity_resep.class);
-                startActivity(i);
+                if (!isUserUpdatedProfile()){
+                    Toast.makeText(getBaseContext(),"Mohon update profile anda terlebih dahulu",Toast.LENGTH_LONG).show();
+                } else{
+                    Intent i = new Intent(MainActivity.this, activity_resep.class);
+                    startActivity(i);
+                }
             }
         });
 
@@ -141,14 +155,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnUlangi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                layoutHasil.setVisibility(View.GONE);
-                layoutHitung.setVisibility(View.VISIBLE);
-            }
-        });
-
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
@@ -166,6 +172,16 @@ public class MainActivity extends AppCompatActivity {
                 layoutHitung.setVisibility(View.VISIBLE);
             }
         });
+
+        btnUlangi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                layoutHasil.setVisibility(View.GONE);
+                layoutHitung.setVisibility(View.VISIBLE);
+            }
+        });
+
+
 
     }
 
@@ -224,6 +240,14 @@ public class MainActivity extends AppCompatActivity {
         return Float.valueOf(age);
     }
 
+    private boolean isUserUpdatedProfile(){
+        String weight = sharedPreferences.getString("weightField", "0");
+        String height = sharedPreferences.getString("heightField", "0");
+        if (weight.equalsIgnoreCase("0") && height.equalsIgnoreCase("0")){
+            return false;
+        }
+        return true;
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void saveToDB(String weight, String height){
@@ -236,5 +260,7 @@ public class MainActivity extends AppCompatActivity {
                 kalori + "', '" +
                 dateInString + "');");
     }
+
+
 
 }

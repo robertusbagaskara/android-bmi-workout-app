@@ -268,7 +268,7 @@
     <Button
         android:id="@+id/btnWorkout"
         android:layout_width="362dp"
-        android:layout_height="93dp"
+        android:layout_height="80dp"
         android:layout_marginTop="28dp"
         android:text="@string/workout"
         app:backgroundTint="#7397AA"
@@ -279,7 +279,7 @@
     <Button
         android:id="@+id/btnResep"
         android:layout_width="362dp"
-        android:layout_height="92dp"
+        android:layout_height="80dp"
         android:layout_marginTop="28dp"
         android:text="@string/recipes"
         app:backgroundTint="#7397AA"
@@ -293,7 +293,7 @@
     <Button
         android:id="@+id/btnTips"
         android:layout_width="362dp"
-        android:layout_height="93dp"
+        android:layout_height="80dp"
         android:layout_marginTop="28dp"
         android:text="@string/tipsTrick"
         app:backgroundTint="#7397AA"

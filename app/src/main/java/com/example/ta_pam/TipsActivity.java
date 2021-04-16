@@ -17,7 +17,7 @@ import com.example.ta_pam.R;
 
 public class TipsActivity extends AppCompatActivity {
 
-    private TextView tvTipsHeader, tvLine1, tvLine2, tvLine3, tvLine4, tvLine5, tvLine6, tvLine7, backtocalculator;
+    private TextView tvTipsHeader, tvLine1, tvLine2, tvLine3, tvLine4, tvLine5, tvLine6, tvLine7;
     private ImageButton btnHome, btnHistory;
     private View background;
     public String tema;
@@ -32,7 +32,6 @@ public class TipsActivity extends AppCompatActivity {
         String tipsLine1 = "0", tipsLine2 = "0",
                 tipsLine3 = "0", tipsLine4 = "0", tipsLine5 = "0", tipsLine6 = "0", tipsLine7 = "0";
 
-        backtocalculator = findViewById(R.id.backtocalculator);
         background = findViewById(R.id.background);
         sharedPreferences = getSharedPreferences("Setting", Context.MODE_PRIVATE);
         btnHistory = findViewById(R.id.btnHistory);
@@ -89,13 +88,6 @@ public class TipsActivity extends AppCompatActivity {
         tvLine6.setText(tipsLine6);
         tvLine7.setText(tipsLine7);
 
-        backtocalculator.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(TipsActivity.this, MainActivity.class);
-                startActivity(i);
-            }
-        });
 
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override

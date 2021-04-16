@@ -136,44 +136,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bornLabel" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="208dp"
-        android:layout_height="20dp"
-        android:layout_below="@+id/genderField"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="32dp"
-        android:text="Waktu Pengingat"
-        app:layout_constraintBottom_toTopOf="@+id/reminderField"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bornField" />
-
-    <EditText
-        android:id="@+id/reminderField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView9"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:clickable="true"
-        android:ems="10"
-        android:focusable="false"
-        android:inputType="textPersonName"
-        android:text="15:00"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.158"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.419" />
-
     <EditText
         android:id="@+id/weightField"
         android:layout_width="66dp"
@@ -293,7 +255,7 @@
         android:id="@+id/textView10"
         android:layout_width="188dp"
         android:layout_height="15dp"
-        android:layout_below="@+id/reminderField"
+        android:layout_below="@+id/bornField"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -303,7 +265,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reminderField" />
+        app:layout_constraintTop_toBottomOf="@+id/bornField" />
 
     <Button
         android:id="@+id/btnUpdate"

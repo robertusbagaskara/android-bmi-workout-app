@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -20,7 +19,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -33,9 +31,8 @@ import java.util.Locale;
 public class profile_page extends AppCompatActivity {
 
     private DatePickerDialog datePickerDialog;
-    private TimePickerDialog timePickerDialog;
     private SimpleDateFormat dateFormatter;
-    private EditText nameField, bornField, reminderField, weightField, heightField;
+    private EditText nameField, bornField, weightField, heightField;
     private Spinner genderField ;
     private Button btnCancel, btnUpdate;
     private ImageButton btnHome, btnHistory;
@@ -52,7 +49,6 @@ public class profile_page extends AppCompatActivity {
         nameField = findViewById(R.id.nameField);
         genderField = findViewById(R.id.genderField);
         bornField = findViewById(R.id.bornField);
-        reminderField = findViewById(R.id.reminderField);
         weightField = findViewById(R.id.weightField);
         heightField = findViewById(R.id.heightField);
         btnCancel = findViewById(R.id.btnCancel);
@@ -67,13 +63,6 @@ public class profile_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showDateDialog();
-            }
-        });
-
-        reminderField.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showTimeDialog();
             }
         });
 
@@ -92,7 +81,6 @@ public class profile_page extends AppCompatActivity {
                 editor.putString("nameField",nameField.getText().toString());
                 editor.putString("genderField",genderField.getSelectedItem().toString());
                 editor.putString("bornField",bornField.getText().toString());
-                editor.putString("reminderField",reminderField.getText().toString());
                 editor.putString("weightField",weightNew);
                 editor.putString("heightField",heightNew);
                 editor.apply();
@@ -140,7 +128,6 @@ public class profile_page extends AppCompatActivity {
         int index = gender.equalsIgnoreCase("Male") ? 0 : 1;
         genderField.setSelection(index);
         bornField.setText(sharedPreferences.getString("bornField", "01-01-2000"));
-        reminderField.setText(sharedPreferences.getString("reminderField", "15:00"));
         weightField.setText(sharedPreferences.getString("weightField", "0"));
         heightField.setText(sharedPreferences.getString("heightField", "0"));
     }
@@ -160,26 +147,6 @@ public class profile_page extends AppCompatActivity {
         } , Integer.valueOf(dateArray[2]), Integer.valueOf(dateArray[1])-1, Integer.valueOf(dateArray[0]));
 
         datePickerDialog.show();
-    }
-
-    private void showTimeDialog() {
-
-        String time = sharedPreferences.getString("reminderField", "15:00");
-        String[] timearray= time.split(":");
-        timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker view, int hourOfDay, int minute){
-                String minute_modified = String.valueOf(minute);
-                if (minute==0){
-                    minute_modified="00";
-                }
-                System.out.println("MINUTE "+ minute);
-                System.out.println("MINUTE MODIFIED " + minute_modified);
-                reminderField.setText(hourOfDay+":"+minute_modified);
-            }
-        }, Integer.valueOf(timearray[0]), Integer.valueOf(timearray[1]), DateFormat.is24HourFormat(this));
-
-        timePickerDialog.show();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

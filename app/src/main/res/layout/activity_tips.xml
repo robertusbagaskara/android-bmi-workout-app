@@ -10,12 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:orientation="vertical">
 
         <ImageButton
             android:id="@+id/btnHistory"
-            android:layout_width="205dp"
+            android:layout_width="202dp"
             android:layout_height="62dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -27,19 +26,20 @@
 
         <ImageButton
             android:id="@+id/btnHome"
-            android:layout_width="206dp"
+            android:layout_width="202dp"
             android:layout_height="62dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:background="#145374"
+            android:background="#7397AA"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnHistory"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/home_24px_outlined" />
+
         <ScrollView
             android:layout_width="368dp"
             android:layout_height="386dp"
-            app:layout_constraintBottom_toTopOf="@+id/backtocalculator"
+            app:layout_constraintBottom_toTopOf="@+id/btnHome"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.609"
             app:layout_constraintStart_toStartOf="parent"
@@ -143,22 +143,6 @@
             app:layout_constraintVertical_bias="0.089"
             tools:layout_conversion_absoluteHeight="19dp"
             tools:layout_conversion_absoluteWidth="371dp" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/backtocalculator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="68dp"
-            android:background="@color/white"
-            android:padding="5dp"
-            android:text="@string/back_to_main_menu"
-            android:theme="@style/DescriptionStyle"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="149dp" />
 
         <View
             android:id="@+id/background"

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -19,7 +20,7 @@ import java.util.Random;
 
 public class activity_workout_preview extends AppCompatActivity {
 
-    private ImageButton btnHome, btnHistory;
+    private ImageButton btnHome, btnHistory, btnBack;
     private TextView totalKalori, jumlahWorkout, waktuWorkout, workoutOneTitle, workoutOneTime, workoutTwoTitle, workoutTwoTime, workoutThreeTitle, workoutThreeTime,
             workoutFourTitle, workoutFourTime, workoutFiveTitle, workoutFiveTime, workoutOneKalori, workoutTwoKalori, workoutThreeKalori, workoutFourKalori, workoutFiveKalori;
     private ImageView workoutOneImage, workoutTwoImage, workoutThreeImage, workoutFourImage, workoutFiveImage,
@@ -60,6 +61,7 @@ public class activity_workout_preview extends AppCompatActivity {
         workoutFourKalori = findViewById(R.id.workoutFourKalori);
         workoutFiveKalori = findViewById(R.id.workoutFiveKalori);
         totalKalori = findViewById(R.id.totalKalori);
+        btnBack = findViewById(R.id.btnBack);
 
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +79,14 @@ public class activity_workout_preview extends AppCompatActivity {
             }
         });
 
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(activity_workout_preview.this, activity_workout_time.class);
+                startActivity(i);
+            }
+        });
+
         sharedPreferences = getSharedPreferences("Setting", Context.MODE_PRIVATE);
 
         String weightOld = sharedPreferences.getString("weightField", "0");
@@ -87,8 +97,14 @@ public class activity_workout_preview extends AppCompatActivity {
         int minutes = Integer.valueOf(minute);
 
         String[] workoutNameUnderweight = {"Jumping Rope", "Squat", "Sit Up", "Run In Place", "Lunges"};
+        int[] workoutImageUnderweight = {R.drawable.jumpingrope, R.drawable.squats, R.drawable.sit_up, R.drawable.run_in_place, R.drawable.lunges};
+
         String[] workoutNameIdeal = {"Bridge", "Stationary Lunge", "Yoga", "Squat", "Push Up"};
+        int[] workoutImageIdeal = {R.drawable.bridge, R.drawable.lunges, R.drawable.yoga, R.drawable.squats, R.drawable.push_up};
+
+
         String[] workoutNameOverweight = {"Push Up", "Sit Up", "Squat", "Lunges", "Latihan Beban"};
+        int[] workoutImageOverweight = {R.drawable.push_up, R.drawable.sit_up, R.drawable.squats, R.drawable.lunges, R.drawable.angkat_beban};
 
         double[] multiplyUnderweight = {11.8, 5.5, 8.0, 9.8, 4.0};
         double[] multiplyIdeal = {6.0, 4.0, 3.1, 5.5, 8.0};
@@ -140,14 +156,20 @@ public class activity_workout_preview extends AppCompatActivity {
             tempIndex.add(n);
 
             if (kategori.equalsIgnoreCase("UNDERWEIGHT")){
-                workoutTitle[i].setText(workoutNameUnderweight[tempIndex.get(i)]);
-                tempKalori = Double.valueOf(weightOld)* multiplyUnderweight[i] * 0.0175 * Double.valueOf(timeSplit[i]);
+                workoutTitle[i].setText(workoutNameUnderweight[n]);
+                tempKalori = Double.valueOf(weightOld)* multiplyUnderweight[n] * 0.0175 * Double.valueOf(timeSplit[i]);
+                workoutImage[i].setImageResource(workoutImageUnderweight[n]);
             } else if (kategori.equalsIgnoreCase("IDEAL")){
-                workoutTitle[i].setText(workoutNameIdeal[tempIndex.get(i)]);
-                tempKalori = Double.valueOf(weightOld)* multiplyIdeal[i] * 0.0175 * Double.valueOf(timeSplit[i]);
+                workoutTitle[i].setText(workoutNameIdeal[n]);
+                tempKalori = Double.valueOf(weightOld)* multiplyIdeal[n] * 0.0175 * Double.valueOf(timeSplit[i]);
+                System.out.println("TRYYY");
+                System.out.println(tempKalori);
+                System.out.println(n + "   " + multiplyIdeal[n]);
+                workoutImage[i].setImageResource(workoutImageIdeal[n]);
             } else {
-                workoutTitle[i].setText(workoutNameOverweight[tempIndex.get(i)]);
-                tempKalori =  Double.valueOf(weightOld)* multiplyOverweight[i] * 0.0175 * Double.valueOf(timeSplit[i]);
+                workoutTitle[i].setText(workoutNameOverweight[n]);
+                tempKalori =  Double.valueOf(weightOld)* multiplyOverweight[n] * 0.0175 * Double.valueOf(timeSplit[i]);
+                workoutImage[i].setImageResource(workoutImageOverweight[n]);
             }
             workoutTime[i].setText(String.valueOf(timeSplit[i])+ " minutes");
             workoutKalori[i].setText(String.format("%.2f",tempKalori) + " calories");
