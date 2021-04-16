@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import com.example.ta_pam.R;
 public class TipsActivity extends AppCompatActivity {
 
     private TextView tvTipsHeader, tvLine1, tvLine2, tvLine3, tvLine4, tvLine5, tvLine6, tvLine7, backtocalculator;
+    private ImageButton btnHome, btnHistory;
     private View background;
     public String tema;
     SharedPreferences sharedPreferences;
@@ -33,6 +35,11 @@ public class TipsActivity extends AppCompatActivity {
         backtocalculator = findViewById(R.id.backtocalculator);
         background = findViewById(R.id.background);
         sharedPreferences = getSharedPreferences("Setting", Context.MODE_PRIVATE);
+        btnHistory = findViewById(R.id.btnHistory);
+        btnHome = findViewById(R.id.btnHome);
+
+        //Boleh dihapus ya kak back to calculatornya
+        backtocalculator.setVisibility(View.GONE);
 
         String weightOld = sharedPreferences.getString("weightField", "0");
         String heightOld = sharedPreferences.getString("heightField", "0");
@@ -88,6 +95,22 @@ public class TipsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(TipsActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TipsActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TipsActivity.this, activity_history.class);
                 startActivity(i);
             }
         });
