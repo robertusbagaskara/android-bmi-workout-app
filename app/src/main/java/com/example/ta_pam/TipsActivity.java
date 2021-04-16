@@ -37,9 +37,7 @@ public class TipsActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("Setting", Context.MODE_PRIVATE);
         btnHistory = findViewById(R.id.btnHistory);
         btnHome = findViewById(R.id.btnHome);
-
-        //Boleh dihapus ya kak back to calculatornya
-        backtocalculator.setVisibility(View.GONE);
+        
 
         String weightOld = sharedPreferences.getString("weightField", "0");
         String heightOld = sharedPreferences.getString("heightField", "0");
